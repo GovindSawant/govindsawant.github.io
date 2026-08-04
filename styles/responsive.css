@@ -21,6 +21,10 @@
   .hero-image {
     justify-content: center;
   }
+
+  .img-wrapper {
+    max-width: 300px;
+  }
 }
 
 /* Mobile Devices */
@@ -35,24 +39,45 @@
   
   /* Hide navigation text links on very small screens, keep just theme toggle or convert to hamburger */
   .nav-links a {
-    display: none; /* simple approach for now, usually a hamburger menu goes here */
+    display: none;
   }
   
+  .hero-section {
+    padding-top: 100px;
+  }
+
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
-  .hero-text h2 {
-    font-size: 1.25rem;
+  .hero-text h2.typing-effect {
+    font-size: 1.1rem;
+    white-space: normal; /* Fix horizontal overflow on mobile */
+    border-right: none;
+    animation: none; /* Disable typing animation on mobile to allow text wrap */
+    width: auto;
   }
   
+  .hero-actions {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .img-wrapper {
+    max-width: 200px;
+  }
+
   .section-title {
     font-size: 1.75rem;
     margin-bottom: 32px;
   }
   
   section {
-    padding: 60px 0;
+    padding: 50px 0;
   }
   
   .projects-grid, .courses-grid, .skills-grid {
@@ -62,5 +87,23 @@
   .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  .card-img, .course-thumb {
+    height: 180px;
+  }
+  
+  .skill-category, .card-content {
+    padding: 20px;
+  }
+}
+
+/* Very Small Mobile */
+@media screen and (max-width: 400px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  .section-container {
+    padding: 0 16px;
   }
 }
