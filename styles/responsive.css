@@ -2,58 +2,63 @@
    RESPONSIVE STYLES
    ========================================= */
 
-/* Large Tablets and smaller desktops */
+/* Tablets / Smaller Desktops */
 @media screen and (max-width: 992px) {
-  .personal-info {
-    padding: 30px;
-  }
-}
-
-/* Tablets (Portrait) */
-@media screen and (max-width: 768px) {
-  .personal-info {
-    flex-direction: column;
-    align-items: center;
+  .hero-container {
+    flex-direction: column-reverse;
     text-align: center;
-    gap: 30px;
+    gap: 40px;
   }
-
-  .profile-group {
-    flex-direction: column;
+  
+  .hero-text p {
+    margin: 0 auto 32px auto;
   }
-
+  
   .hero-actions {
-    align-items: center;
+    justify-content: center;
   }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2.section-title {
-    font-size: 1.75rem;
+  
+  .hero-image {
+    justify-content: center;
   }
 }
 
 /* Mobile Devices */
-@media screen and (max-width: 480px) {
-  main, header {
-    padding: 20px 15px;
+@media screen and (max-width: 768px) {
+  .nav-container {
+    padding: 16px;
   }
   
-  .personal-info {
-    padding: 25px 15px;
+  .nav-links {
+    gap: 16px;
   }
-
-  .profile-img {
-    width: 100px;
-    height: 100px;
+  
+  /* Hide navigation text links on very small screens, keep just theme toggle or convert to hamburger */
+  .nav-links a {
+    display: none; /* simple approach for now, usually a hamburger menu goes here */
   }
-
-  .projects-container, .courses-container, .skills-container {
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 1.25rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 32px;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .projects-grid, .courses-grid, .skills-grid {
     grid-template-columns: 1fr;
   }
-
+  
   .btn {
     width: 100%;
     justify-content: center;

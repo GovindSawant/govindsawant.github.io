@@ -3,7 +3,39 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Intersection Observer for Scroll Animations
+    
+    /* =========================================
+       THEME TOGGLING (Dark / Light Mode)
+       ========================================= */
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    
+    // Check local storage for saved theme
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'dark') {
+        body.classList.replace('light-theme', 'dark-theme');
+        themeIcon.classList.replace('ri-moon-line', 'ri-sun-line');
+    }
+    
+    themeToggleBtn.addEventListener('click', () => {
+        if (body.classList.contains('light-theme')) {
+            // Switch to Dark Theme
+            body.classList.replace('light-theme', 'dark-theme');
+            themeIcon.classList.replace('ri-moon-line', 'ri-sun-line');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            // Switch to Light Theme
+            body.classList.replace('dark-theme', 'light-theme');
+            themeIcon.classList.replace('ri-sun-line', 'ri-moon-line');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    /* =========================================
+       SCROLL ANIMATIONS (Intersection Observer)
+       ========================================= */
     const observerOptions = {
         root: null,
         rootMargin: '0px',
