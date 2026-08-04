@@ -1,186 +1,363 @@
+/* =========================================
+   CSS VARIABLES & DESIGN TOKENS
+   ========================================= */
+:root {
+  /* Colors */
+  --bg-color: #0f172a; /* Deep Slate Blue */
+  --bg-glass: rgba(30, 41, 59, 0.7);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  
+  /* Gradients */
+  --gradient-1: linear-gradient(135deg, #4F46E5 0%, #EC4899 100%);
+  --gradient-2: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --gradient-3: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  
+  /* Utilities */
+  --border-radius: 16px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
-html,body {
-  height: 165%;
-  width: 100%;
+
+html {
+  scroll-behavior: smooth;
 }
-main {
-  padding: 25px 35px;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(31, 30, 30, 0.948);
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  
+  /* Subtle background pattern/glow */
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
 }
-main .personal-info {
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #4158D0;
-  background-image: linear-gradient(45deg,#4158D0 0%,#C850C0 46%,#FFCC70 100%);
-  height: 200px;
-  width: 100%;
+
+ul {
+  list-style: none;
 }
-main .personal-info img{
-  object-fit: cover;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
-main .personal-info .left-side{
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   LAYOUT & CONTAINERS
+   ========================================= */
+main, header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  padding: 60px 0;
+}
+
+/* Glassmorphism Card Utility */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   COMPONENTS
+   ========================================= */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  font-size: 1rem;
+}
+
+.primary-btn {
+  background: var(--gradient-1);
   color: white;
-  padding-right: 20px;
-  width: 350px;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.secondary-btn:hover:not(.disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Background gradient utilities for placeholders */
+.bg-gradient-1 { background: var(--gradient-1); }
+.bg-gradient-2 { background: var(--gradient-2); }
+.bg-gradient-3 { background: var(--gradient-3); }
+.img-placeholder { width: 100%; height: 100%; opacity: 0.8; }
+
+/* =========================================
+   HEADER / HERO SECTION
+   ========================================= */
+.hero-section {
+  padding-top: 60px;
+}
+
+.personal-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow effect behind hero card */
+.personal-info::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.profile-group {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 24px;
+  z-index: 1;
 }
-main .personal-info h3{
-  font-weight: 600;
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-main .personal-info h4{
-  font-weight: 200;
-  font-size: 14px;
- }
- .projects-section {
-  padding: 15px 40px;
- }
- .projects-section h2 {
-  color: white;
-  text-align: center;
- }
- .projects-section .projects-container {
-  margin-top: 45px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
- }
- .projects-section .projects-container .project {
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: #4159d06e;
-  background-image: linear-gradient(45deg,#4e5da8 0%,#872581 46%,#916b25 100%);
-  width: 320px;
-  height: 330px;
- }
- .project h2{
-  padding: 10px;
- }
- .project a img{
-  height: 70%;
-  width: 100%;
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   object-fit: cover;
- }
- .project .desc{
-  color: whitesmoke;
-  font-weight: 700;
-  margin: -50px 30px;
-  line-height: 15px;
-  text-align: center;
- }
- .contact-section {
-  padding: 20px 30px;
-  margin-top: 75px;
-  background-color: #FBDA61;
-  background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
-  
-  height: 80px;
-  border-radius: 5px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+}
 
+.profile-text h2 {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.hero-actions {
   display: flex;
-  justify-content: space-between;
- }
- .contact-section button {
-  cursor: pointer;
-  color: whitesmoke;
-  font-weight: 700;
-  background-color: #FF3CAC;
-  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+  z-index: 1;
+}
 
-  border-radius: 5px;
-  padding: 10px;
-  border: none;
- }
-.icons-container i{
-  cursor: pointer;
-  font-size: 30px;
-  margin-left: 10px;
-  color: black;
+.icons-container {
+  display: flex;
+  gap: 16px;
 }
-.icons-container a{
-  text-decoration: none;
+
+.icons-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.25rem;
+  transition: var(--transition);
 }
- .learning-section {
-  margin-top: 50px;
- }
- .learning-section h2{
+
+.icons-container a:hover {
+  background: var(--gradient-1);
+  transform: translateY(-3px);
   color: white;
-  text-align: center;
- }
- .learning-section .container{
-  padding: 0px 50px;
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
- }
- .learning-section .container .section{
-  color: rgb(255, 234, 234);
+  border-color: transparent;
+}
 
-  background-color: #3EECAC;
-  background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 100%);
+/* =========================================
+   PROJECTS SECTION
+   ========================================= */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
 
-  padding: 15px;
-  height: 180px;
-  width: 290px;
-  border-radius: 15px;
- }
-.container .section h5{
-  display: inline-block;
-  margin: 3px;
-  padding: 5px 15px;
-  border-radius: 15px;
-  border: 1px solid rgb(255, 156, 173);
-}
-.container .section h4{
-  margin: 15px 8px;
-}
-.courses-section{
-  margin-top: 50px;
-  padding: 45px;
-}
-.courses-section h2{
-  color: white;
- text-align: center;
-}
-.courses-section .courses-container{
-  margin-top: 45px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-.courses-section .courses-container .course{
-  border-radius: 10px;
-  height: 330px;
-  width: 300px;
-  background-color: white;
+.project-card, .course-card {
+  background: var(--bg-glass);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
   overflow: hidden;
-
-  background-color: #4159d06e;
-  background-image: linear-gradient(45deg,#4e5da8 0%,#872581 46%,#916b25 100%);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
-.course img{
-  height: 60%;
+
+.project-card:hover, .course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-img-wrapper, .course-img-wrapper {
+  height: 200px;
+  overflow: hidden;
+  display: block;
+}
+
+.course-img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
-.course .desc{
-  color: whitesmoke;
-  font-weight: 700;
-  margin: 20px 30px;
-  line-height: 15px;
+
+.project-content, .course-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-content p, .course-content p {
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* =========================================
+   LEARNINGS / SKILLS SECTION
+   ========================================= */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  padding: 30px;
+}
+
+.skill-category h3 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-list li {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.skill-list li:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================
+   COURSES SECTION (Similar to Projects)
+   ========================================= */
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.site-footer {
   text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   ANIMATIONS (JS Triggered)
+   ========================================= */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

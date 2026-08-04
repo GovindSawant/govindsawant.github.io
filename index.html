@@ -3,96 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Govind Sawant Portfolio</title>
-  <link rel="stylesheet" href="styles/responsive.css">
+  <title>Govind Sawant | Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/style.css">
-  <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+  <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
-  <main>
-    <div class="personal-info">
-      <div class="left-side">
-        <img src="images/govind.jpg" alt="image">
-        <div>
-          <h3>Govind Sawant</h3>
-          <h4>BSc IT Student</h4>
+  
+  <!-- Header / Hero Section -->
+  <header class="hero-section animate-on-scroll">
+    <div class="glass-card personal-info">
+      <div class="profile-group">
+        <img src="images/govind.jpg" alt="Govind Sawant Profile Picture" class="profile-img">
+        <div class="profile-text">
+          <h1>Govind Sawant</h1>
+          <h2>BSc IT Student & Developer</h2>
         </div>
       </div>
-    </div>
-    <div class="projects-section">
-      <h2>Projects</h2>
-      <div class="projects-container">
-        <div class="project">
-          <h2>Project Name</h2>
-          <a href="https://govindsawant.github.io/rock-paper-scissor-game-project/">
-            <img src="">
+      
+      <!-- Resume & Socials moved up for better UX -->
+      <div class="hero-actions">
+        <a href="#" class="btn primary-btn">
+          <i class="ri-file-download-line"></i> Open my Resume
+        </a>
+        <div class="icons-container">
+          <a href="https://github.com/GovindSawant" target="_blank" aria-label="GitHub Profile">
+            <i class="ri-github-fill"></i>
           </a>
-          <div class="desc">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero rem at eligendi pariatur voluptates?
+          <a href="https://www.linkedin.com/in/govindsawantdev/" target="_blank" aria-label="LinkedIn Profile">
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a href="https://www.instagram.com/govindsawant_/" target="_blank" aria-label="Instagram Profile">
+            <i class="ri-instagram-line"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Projects Section -->
+    <section class="projects-section animate-on-scroll">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-container">
+        
+        <article class="project-card">
+          <a href="https://govindsawant.github.io/rock-paper-scissor-game-project/" target="_blank" class="project-img-wrapper" aria-label="View Rock Paper Scissors Project">
+            <!-- Using placeholder or empty bg, CSS will style it -->
+            <div class="img-placeholder bg-gradient-1"></div>
+          </a>
+          <div class="project-content">
+            <h3>Rock Paper Scissors</h3>
+            <p>A fun interactive game built with HTML, CSS, and vanilla JavaScript.</p>
+            <a href="https://govindsawant.github.io/rock-paper-scissor-game-project/" class="btn secondary-btn" target="_blank">View Project</a>
           </div>
-        </div>
-        <div class="project"></div>
-        <div class="project"></div>
-        <div class="project"></div>
+        </article>
+        
+        <!-- Placeholders for future projects -->
+        <article class="project-card">
+          <div class="project-img-wrapper">
+             <div class="img-placeholder bg-gradient-2"></div>
+          </div>
+          <div class="project-content">
+            <h3>Project Two</h3>
+            <p>Coming soon. An amazing web application currently in development.</p>
+            <button class="btn secondary-btn disabled">Coming Soon</button>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-img-wrapper">
+             <div class="img-placeholder bg-gradient-3"></div>
+          </div>
+          <div class="project-content">
+            <h3>Project Three</h3>
+            <p>Coming soon. Another fantastic project to showcase skills.</p>
+            <button class="btn secondary-btn disabled">Coming Soon</button>
+          </div>
+        </article>
+
       </div>
-    </div>
-    <div class="contact-section">
-      <button>Open my Resume</button>
-      <div class="icons-container">
-        <a href="https://github.com/GovindSawant" target="_blank">
-          <i class="ri-github-fill"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/govindsawantdev/" target="_blank">
-          <i class="ri-linkedin-fill"></i>
-        </a>
-        <a href="https://www.instagram.com/govindsawant_/ " target="_blank">
-          <i class="ri-instagram-line"></i>
-        </a>
+    </section>
+
+    <!-- Skills / Learnings Section -->
+    <section class="learning-section animate-on-scroll">
+      <h2 class="section-title">My Learnings & Skills</h2>
+      <div class="skills-container">
+        
+        <div class="glass-card skill-category">
+          <h3>Programming Languages</h3>
+          <ul class="skill-list">
+            <li>C</li>
+            <li>C++</li>
+            <li>Python</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+          </ul>
+        </div>
+
+        <div class="glass-card skill-category">
+          <h3>Tools & Technologies</h3>
+          <ul class="skill-list">
+            <li>Git & GitHub</li>
+            <li>VS Code</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+        
+        <div class="glass-card skill-category">
+          <h3>Design & Visualization</h3>
+          <ul class="skill-list">
+            <li>UI/UX Basics</li>
+            <li>Figma</li>
+          </ul>
+        </div>
+
       </div>
-    </div>
-    <div class="learning-section">
-      <h2>My Learnings</h2>
-      <div class="container">
-        <div class="section">
-          <h4>Programing</h4>
-          <h5>C</h5>
-          <h5>C++</h5>
-          <h5>Python</h5>
-          <h5>HTML</h5>
-          <h5>CSS</h5>
-          <h5>JavaScript</h5>
-          <h5>JAVA</h5> 
-        </div>
-        <div class="section">
-          <h4>Data &amp; Technology</h4>
-          <h5>Git</h5>
-        </div>
-        <div class="section">
-          <h4>Design &amp; Visualization</h4>
-        </div>
-        <div class="section">
-          <h4>Other Projects</h4>
-        </div>
-      </div>
-    </div>
-    <div class="courses-section">
-      <h2>Courses</h2>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section animate-on-scroll">
+      <h2 class="section-title">Certifications & Courses</h2>
       <div class="courses-container">
-        <div class="course">
-          <img src="images/govind.jpg">
-          <div class="desc">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, adipisci?
+        
+        <article class="course-card">
+          <div class="course-img-wrapper">
+             <img src="images/govind.jpg" alt="Course Image Placeholder" class="course-img">
           </div>
-        </div>
-        <div class="course"></div>
-        <div class="course"></div>
-        <div class="course"></div>
+          <div class="course-content">
+            <h3>Web Development Bootcamp</h3>
+            <p>Completed an extensive course covering front-end technologies and best practices.</p>
+          </div>
+        </article>
+        
+        <!-- Placeholder courses -->
+         <article class="course-card">
+          <div class="course-img-wrapper">
+             <div class="img-placeholder bg-gradient-1"></div>
+          </div>
+          <div class="course-content">
+            <h3>Python for Data Science</h3>
+            <p>Learned data manipulation and analysis using Python libraries.</p>
+          </div>
+        </article>
+
       </div>
-    </div>
+    </section>
   </main>
-  <script src="script.js"></script>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Govind Sawant. Built with ❤️</p>
+  </footer>
+
+  <script src="scripts/script.js"></script>
 </body>
 </html>
