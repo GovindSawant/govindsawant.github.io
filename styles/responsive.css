@@ -1,0 +1,49 @@
+@media (max-width:600px) {
+  html,body {
+    height: 240%;
+    width: 100%;
+  }
+  main {
+    padding: 25px 0px;
+  }
+  main .personal-info {
+    margin: 10px 20px;
+    height: 160px;
+    width: 90vw;
+  }
+  main .personal-info .left-side{
+    width: 280px;
+  }
+  main .personal-info img{
+    width: 120px;
+    height: 120px;
+    margin-right: 10px;
+  }
+  main .personal-info h3{
+    font-weight: 600;
+    font-size: 19px;
+  }
+  main .personal-info h4{
+    font-weight: 300;
+    font-size: 14px;
+   }
+   .projects-section {
+    padding: none;
+   }
+   .projects-section .projects-container .project {
+    width: 270px;
+    height: 290px;
+   }
+   .contact-section {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+   }
+   .icons-container i{
+    font-size: 25px;
+    margin-left: 10px 5px;
+  }
+  .courses-section{
+    margin-top: 10px;
+  }
+}
