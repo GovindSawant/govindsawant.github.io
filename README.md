@@ -1,4 +1,4 @@
-# Govind Sawant | Personal Portfolio 🚀
+# Govind Sawant | Personal Portfolio 
 
 A modern, highly responsive, and SEO-optimized personal portfolio website built to showcase my professional experience, featured projects, and technical skills as a Backend Developer and IT student.
 
