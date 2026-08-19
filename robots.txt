@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://govindsawant.netlify.app/sitemap.xml
+Sitemap: https://govindsawant.github.io/sitemap.xml
