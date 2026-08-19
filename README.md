@@ -2,7 +2,7 @@
 
 A modern, highly responsive, and SEO-optimized personal portfolio website built to showcase my professional experience, featured projects, and technical skills as a Backend Developer and IT student.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://govindsawant.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://govindsawant.github.io/)
 
 ## ✨ Features
 
